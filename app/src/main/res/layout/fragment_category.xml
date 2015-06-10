@@ -1,0 +1,41 @@
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="denisefurlong.com.budgetapp.ui.CategoryFragment"
+    android:orientation="vertical" android:weightSum="100">
+
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent"
+        android:layout_height="0dp"  android:weightSum="2" android:layout_weight="10">
+        <TextView android:id="@+id/category_name" android:layout_width="wrap_content"   android:layout_gravity="center"
+            style="@android:style/TextAppearance.Large" android:layout_height="wrap_content"
+            android:text="Category" android:layout_weight="2"/>
+    </LinearLayout>
+
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent"
+        android:layout_height="0dp"  android:weightSum="2" android:layout_weight="10">
+        <TextView android:id="@+id/category_date_range" android:layout_width="wrap_content"   android:layout_gravity="center"
+            style="@android:style/TextAppearance.Large" android:layout_height="wrap_content"
+            android:text="2015-03-01 : 2015-03-13" android:layout_weight="2"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_weight="70"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp" >
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/list_items_for_month"/>
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_weight="10"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp">
+        <TextView android:id="@+id/category_total" android:layout_width="wrap_content"   android:layout_gravity="center"
+            style="@android:style/TextAppearance.Large" android:layout_height="wrap_content"
+            android:text="Total: £20.00" android:layout_weight="2" android:background="#ED8600"/>
+    </LinearLayout>
+</LinearLayout>
