@@ -36,11 +36,11 @@ public class HomeScreen extends BaseConnection implements
     GoogleApiClient.ConnectionCallbacks,
     GoogleApiClient.OnConnectionFailedListener{
 
-    private GoogleApiClient mApiClient;
     private DriveSheet sheet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setContentView(R.layout.activity_home_screen);
         super.onCreate(savedInstanceState);
 
         if (mApiClient == null) {
