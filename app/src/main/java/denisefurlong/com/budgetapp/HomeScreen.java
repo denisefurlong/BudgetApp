@@ -42,20 +42,6 @@ public class HomeScreen extends BaseConnection implements
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_home_screen);
         super.onCreate(savedInstanceState);
-
-        if (mApiClient == null) {
-            Scope sheets = new Scope(ConstantValues.FEEDS_SCOPE);
-            mApiClient = new GoogleApiClient.Builder(this)
-                    .addApi(Drive.API)
-                    .addScope(Drive.SCOPE_FILE)
-                    .addScope(Drive.SCOPE_APPFOLDER)
-                    .addScope(sheets)
-                    .addConnectionCallbacks(this)
-                    .addApi(Plus.API)
-                    .addOnConnectionFailedListener(this)
-                    .build();
-        }
-        mApiClient.connect();
     }
 
     private void checkForFile(){
@@ -118,6 +104,7 @@ public class HomeScreen extends BaseConnection implements
     @Override
     public void onConnected(Bundle connectionHint) {
         Log.i(ConstantValues.APP_TAG, "Google Client connected");
+        mAccountName = Plus.AccountApi.getAccountName(mApiClient);
         checkForFile();
     }
 

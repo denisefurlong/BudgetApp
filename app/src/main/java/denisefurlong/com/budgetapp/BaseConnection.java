@@ -1,5 +1,6 @@
 package denisefurlong.com.budgetapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.os.Bundle;
@@ -14,7 +15,7 @@ import com.google.android.gms.drive.Drive;
 import com.google.android.gms.plus.Plus;
 import denisefurlong.com.budgetapp.ui.CategoryFragment;
 
-public abstract class BaseConnection extends ActionBarActivity implements
+public abstract class BaseConnection extends Activity implements
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         CategoryFragment.OnFragmentInteractionListener{
@@ -75,7 +76,6 @@ public abstract class BaseConnection extends ActionBarActivity implements
     public void onConnected(Bundle connectionHint) {
         Log.i(ConstantValues.APP_TAG, "Google Api Client connected");
         mAccountName = Plus.AccountApi.getAccountName(mApiClient);
-        //connectionComplete();
     }
 
     /**
